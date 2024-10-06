@@ -7,8 +7,8 @@ build-int
 *.vcxproj.filters
 *.vcxproj.user
 
-# Ignoriraj sve datoteke unutar svih podfoldera u 'ext'
-ext/*/*
-
-# Ne ignoriraj sam 'ext' folder
-!ext/
+# unnecessary external libraries files
+bin
+doc
+examples
+lib
