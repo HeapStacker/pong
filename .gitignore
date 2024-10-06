@@ -1,0 +1,11 @@
+.git
+.vs
+build
+build-int
+
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ignoriraj sve datoteke unutar svih podfoldera u 'ext'
+ext/*/*
