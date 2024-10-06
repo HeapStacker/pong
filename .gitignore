@@ -9,3 +9,6 @@ build-int
 
 # Ignoriraj sve datoteke unutar svih podfoldera u 'ext'
 ext/*/*
+
+# Ne ignoriraj sam 'ext' folder
+!ext/
