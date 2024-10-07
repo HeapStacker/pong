@@ -7,7 +7,7 @@ build-int
 *.vcxproj.filters
 *.vcxproj.user
 
-# unnecessary external libraries files
+# unnecessary external library files
 bin
 doc
 examples
