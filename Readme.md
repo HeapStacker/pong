@@ -15,9 +15,9 @@ Instead of using an Entity Component System (ECS), a more traditional OOP approa
 ## Future Enhancements
 Although the project is technically complete, I’m aware that certain aspects are not perfectly implemented due to time constraints:
 
-* the text isn’t properly centered.
+* the text isn’t properly centered
 * the ball sometimes bounces off the side and back of the paddle, which is unintended
-* Occasionally, the ball gets stuck along the wall
+* occasionally, the ball gets stuck along the wall
 * there’s no game menu yet
 * music and sound effects haven’t been added
 * some power-ups, like the speed-up buff, could be improved. For example, the speed buff can remain active after hitting both the wall and paddle
