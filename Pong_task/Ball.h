@@ -7,8 +7,8 @@
 sf::Vector2f normalize(const sf::Vector2f& vector);
 
 class Ball : public Rectangle, public UpdateableObject {
-	bool leftHit = false;
-	bool rightHit = false;
+	int redAnimation = 255;
+
 	bool upperWallHit = false;
 	bool lowerWallHit = false;
 
@@ -28,8 +28,6 @@ class Ball : public Rectangle, public UpdateableObject {
 		lowerWallHit = false;
 		ballDirection.y = -ballDirection.y;
 	}
-
-	bool checkPaddleHit(Paddle* paddle, const float& condition1, const float& condition2);
 	
 	void applyPaddleAfterHitEffect(Paddle* paddle);
 
@@ -37,11 +35,11 @@ public:
 	Paddle* leftPaddle = nullptr;
 	Paddle* rightPaddle = nullptr;
 
+	bool leftHit = false;
+	bool rightHit = false;
+
 	Ball()
-		:Rectangle({ WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f }, { BALL_SIZE, BALL_SIZE }, true)
-	{ 
-		
-	}
+		:Rectangle({ WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f }, { BALL_SIZE, BALL_SIZE }, true, sf::Color::White) { }
 
 	void linkPaddles(Paddle* lp, Paddle* rp) {
 		leftPaddle = lp;
@@ -59,5 +57,20 @@ public:
 	void update() override {
 		moveBall();
 	}
+
+
+	// for power-ups... 
+
+	void setNormalSpeed();
+
+	void setHigherSpeed() {
+		ballDirection *= 2.f;
+	}
+
+	void mirrorDirrection() {
+		ballDirection.x = -ballDirection.x;
+		leftHit = rightHit = false;
+	}
+
 };
 

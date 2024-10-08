@@ -1,10 +1,10 @@
 #pragma once
-#include "Rectangle.h"
-#include "Line.h"
-#include "Text.h"
 #include "Scene.h"
 #include "Definitions.h"
 #include "Setup.h"
+
+#include <SFML/Graphics.hpp>
+#include "DrawableObject.h"
 
 class Application
 {
@@ -12,7 +12,7 @@ class Application
 public:
 	Application(std::string name, sf::Image& icon, unsigned int windowWidth, unsigned int windowHeight) {
 		window = new sf::RenderWindow(sf::VideoMode(windowWidth, windowHeight), name);
-		window->setFramerateLimit(60);
+		window->setFramerateLimit(FPS);
 
 		DrawableObject::linkRenderWindow(window);
 		window->setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());

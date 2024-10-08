@@ -1,5 +1,4 @@
 #include "Application.h"
-#include "Setup.h"
 
 
 int main() {

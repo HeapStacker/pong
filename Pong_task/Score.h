@@ -19,11 +19,11 @@ public:
 
 	void update() override {
 		if (winningCondition()) {
-			ball->shape->setPosition({ WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f });
+			ball->shape.setPosition({ WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f });
 			ball->setDirection();
 			ball->setToNoHits();
-			ball->leftPaddle->shape->setPosition({ PADDLE_OFFSET, WINDOW_HEIGHT / 2.f });
-			ball->rightPaddle->shape->setPosition({ WINDOW_WIDTH - PADDLE_OFFSET, WINDOW_HEIGHT / 2.f });
+			ball->leftPaddle->shape.setPosition({ PADDLE_OFFSET, WINDOW_HEIGHT / 2.f });
+			ball->rightPaddle->shape.setPosition({ WINDOW_WIDTH - PADDLE_OFFSET, WINDOW_HEIGHT / 2.f });
 
 			score++;
 			setString(std::to_string(score));

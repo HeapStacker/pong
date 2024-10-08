@@ -6,7 +6,11 @@
 class Paddle : public Rectangle, public UpdateableObject {
     sf::Keyboard::Key keyUp;
     sf::Keyboard::Key keyDown;
+
 public:
+
+    bool slow = false;
+
     Paddle(float xPos, sf::Keyboard::Key&& kexUp, sf::Keyboard::Key&& kexDown)
         :Rectangle({ xPos, WINDOW_HEIGHT / 2.f }, { PADDLE_WIDTH, PADDLE_HEIGHT }, true)
     {
@@ -15,13 +19,15 @@ public:
     }
 
     void update() override {
-        if (sf::Keyboard::isKeyPressed(keyUp) && shape->getPosition().y - PADDLE_HEIGHT / 2.f > WALL_WIDTH)
+        if (sf::Keyboard::isKeyPressed(keyUp) && shape.getPosition().y - PADDLE_HEIGHT / 2.f > WALL_WIDTH)
         {
-            shape->move({ 0.f, -PADDLE_SPEED });
+            if (slow) shape.move({ 0.f, -PADDLE_SPEED / 2.f });
+            else shape.move({ 0.f, -PADDLE_SPEED });
         }
-        if (sf::Keyboard::isKeyPressed(keyDown) && shape->getPosition().y + PADDLE_HEIGHT / 2.f < WINDOW_HEIGHT - WALL_WIDTH)
+        if (sf::Keyboard::isKeyPressed(keyDown) && shape.getPosition().y + PADDLE_HEIGHT / 2.f < WINDOW_HEIGHT - WALL_WIDTH)
         {
-            shape->move({ 0.f, PADDLE_SPEED });
+            if (slow) shape.move({ 0.f, PADDLE_SPEED / 2.f });
+            else shape.move({ 0.f, PADDLE_SPEED });
         }
     }
 };

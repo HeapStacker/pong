@@ -1,11 +1,7 @@
-.git
 .vs
+
 build
 build-int
-
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
 
 # unnecessary external library files
 bin
