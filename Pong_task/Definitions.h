@@ -2,7 +2,6 @@
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 
-
 // some ingame variables
 #define FPS 60
 

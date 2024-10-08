@@ -1,4 +1,4 @@
-#include "Setup.h"
+﻿#include "Setup.h"
 #include "Application.h"
 #include <SFML/System/Vector2.hpp>
 
@@ -14,6 +14,8 @@
 #include "SpeedPowerUp.h"
 #include "MirrorPowerUp.h"
 #include "SlowDebuf.h"
+
+#include "AudioPlayer.h"
 
 void loadObjects() {
 	static sf::Font font;
